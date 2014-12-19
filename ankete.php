@@ -52,7 +52,7 @@ echo "<br>Additional info about me: ".$addinfo."<br>";
 	(NULL, \'John Doe\', \'2014-12-10\', \'Almaty\', \'married\', \'higher\', \'5 years\', \'321654987\', \'qw@oi.org\', \'note\', \'black\');";*/
 	$query_select = "select * from users";
 	//echo $query_insert;
-	$query_insert_result = mysql_query($query_insert) or die("insert fail ".mysql_error());
+	//$query_insert_result = mysql_query($query_insert) or die("insert fail ".mysql_error());
 
 	
 	//image processing part
@@ -102,9 +102,10 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-		echo $uploadOk;
-		mysql_query($query_image_insert);
+        //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+		//echo $uploadOk;
+		$query_insert_result = mysql_query($query_insert) or die("insert fail ".mysql_error());
+		mysql_query($query_image_insert) or die("insert fail ".mysql_error());
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
