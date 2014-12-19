@@ -51,7 +51,7 @@ echo "<br>Additional info about me: ".$addinfo."<br>";
 	`marital_status`, `education`, `work`, `phone`, `email`, `addinfo`, `color`) VALUES 
 	(NULL, \'John Doe\', \'2014-12-10\', \'Almaty\', \'married\', \'higher\', \'5 years\', \'321654987\', \'qw@oi.org\', \'note\', \'black\');";*/
 	$query_select = "select * from users";
-	echo $query_insert;
+	//echo $query_insert;
 	$query_insert_result = mysql_query($query_insert) or die("insert fail ".mysql_error());
 
 	
