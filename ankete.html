@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+<title>Dating</title>
+<meta charset="UTF-8">
+<style>
+	#content{
+		align:center;
+	}
+</style>
+</head>
+
+<body>
+<div id = "content" align = "center">
+<form action="ankete.php" method="POST" enctype="multipart/form-data">
+  <div id = "fullname">ФИО</div><input type="text" name="fullname" placeholder = "ФИО" id = "fullname0" required size = "50" maxlength = "50"><br>
+	<div id = "login">Логин</div><input type="text" name="login" placeholder = "Логин" id = "login0" required size = "50" maxlength = "50"><br>
+	<div id = "pass">Пароль</div><input type="password" name="pass" placeholder = "Пароль" id = "pass0" required size = "50" maxlength = "50"><br>
+  <div id = "datebirth">Год рождения</div><input type="date" name="datebirth" placeholder = "Год рождения" id = "datebirth0" required><br>
+  <div id = "place">Место проживания</div><input type="text" name="place" placeholder = "Место проживания" id = "place0" required size = "50" maxlength = "50"><br>
+  <!--<input type="text" name="marital_status" placeholder = "Семейное положение" id = "marital_status0" required><br>-->
+  <div id = "marital_status">Семейное положение</div>
+  <select name = "marital_status" id = "marital_status0">
+  <option value="single">Свободен\Свободна</option>
+  <option value="married">Женат\Замужем</option>
+</select>
+
+  <div id = "education">Образование</div><input type="text" name="education" placeholder = "Образование" id = "education0" required size = "50" maxlength = "50"><br>
+  <div id = "work">Опыт работы</div><input type="text" name="work" placeholder = "Опыт работы" id = "work0" required size = "50" maxlength = "50"><br>
+  <div id ="phone">Телефон</div><input type="tel" name="phone" placeholder = "Телефон" id = "phone0" required size = "10" maxlength = "10"><br>
+  <div id = "email">email</div><input type="email" name="email" placeholder = "email" id = "email0" required size = "50" maxlength = "50"><br>
+  <div id ="addinfo">Дополнительные сведения о себе</div><input type="text" name="addinfo" placeholder = "Дополнительные сведения о себе" id = "addinfo0" required size = "50" maxlength = "50"><br>
+  <div id = "color">Цвет</div><input type = "color" name = "color" id = "color0" required><br>
+  <input type="file" name="fileToUpload" id="fileToUpload" required accept="image/*">
+  <input type = "hidden" id = "lang" name = "lang" value = "ru">
+  <br><input type="submit" value="Зарегистрироваться">
+</form>
+<br>
+<button onclick = "en()">EN</button><br><br>
+<button onclick = "ru()">RU</button>
+</div><!--content-->
+<script>
+var txtid = [
+		"fullname",
+		"datebirth",
+		"place",
+		"marital_status",
+		"education",
+		"work",
+		"phone",
+		"email",
+		"addinfo"
+	];
+	var txten = [
+		"Full name",
+		"Date of birth",
+		"Place",
+		"Marital status",
+		"Education",
+		"Work",
+		"Phone",
+		"Email",
+		"Additional info"
+	];
+	var txtru = [
+		"ФИО",
+		"Дата рождения",
+		"Место рождения",
+		"Семейное положение",
+		"Образование",
+		"Опыт работы",
+		"Телефон",
+		"Email",
+		"Дополнительные сведения о себе"
+	];
+	
+	//alert("Yes Sir!");
+	/*document.getElementById("fullname").innerHTML = "Full name";
+	document.getElementById("fullname0").placeholder = "Full name";
+	
+	document.getElementById("datebirth").innerHTML = "Date of birth";
+	document.getElementById("datebirth0").placeholder = "Date of birth";
+	
+	document.getElementById("place").innerHTML = "Place of birth";
+	document.getElementById("place0").placeholder = "Place of birth";
+	
+	document.getElementById("marital_status").innerHTML = "Marital status";
+	document.getElementById("marital_status0").placeholder = "Marital status";
+	
+	document.getElementById("education").innerHTML = "Education";
+	document.getElementById("education0").placeholder = "Education";
+	
+	
+	document.getElementById("work").innerHTML = "Work";
+	document.getElementById("work0").placeholder = "Work";
+	
+	document.getElementById("phone").innerHTML = "Phone";
+	document.getElementById("phone0").placeholder = "Phone";
+	
+	document.getElementById("email").innerHTML = "Email";
+	document.getElementById("email0").placeholder = "Email";
+	
+	document.getElementById("addinfo").innerHTML = "Additional info";
+	document.getElementById("addinfo0").placeholder = "Additional info";*/
+	//do so tomorrow
+	
+	var length = txtid.length;
+	function en(){
+	document.getElementById("lang").value = "en";
+		for (i = 0; i < length; i++){
+				//var byid = document.getElementById(txt[i]).innerHTML = txten[i];
+				document.getElementById(txtid[i]).innerHTML = txten[i];
+			//alert(byid);
+			//alert(txt[i]);
+			};
+		//alert(length);
+	};
+	
+	//cycle();
+
+function ru(){
+document.getElementById("lang").value = "ru";
+		for (i = 0; i < length; i++){
+				//var byid = document.getElementById(txt[i]).innerHTML = txten[i];
+				document.getElementById(txtid[i]).innerHTML = txtru[i];
+			//alert(byid);
+			//alert(txt[i]);
+			};
+		//alert(length);
+	};
+</script>
+</body>
+</html>
